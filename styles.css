@@ -8,7 +8,7 @@
 /* 全站 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f7f6f4;
+  background-color: #fff6f8; /* 淡粉背景 */
   color: #1f1f1f;
   line-height: 1.6;
 }
@@ -21,8 +21,8 @@ body {
   padding: 20px 12%;
   position: fixed;
   width: 100%;
-  background: rgba(247, 246, 244, 0.9);
-  border-bottom: 1px solid #e5e3df;
+  background: rgba(255, 246, 248, 0.9);
+  border-bottom: 1px solid #f1d7de;
 }
 
 .nav-logo {
@@ -34,6 +34,7 @@ body {
   margin-left: 24px;
   font-size: 14px;
   color: #666;
+  text-decoration: none;
 }
 
 /* Hero */
@@ -44,6 +45,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
+  background: linear-gradient(180deg, #fff6f8 0%, #ffffff 100%);
 }
 
 .hero-name {
@@ -54,7 +56,7 @@ body {
 
 .hero-tagline {
   font-size: 18px;
-  color: #666;
+  color: #777;
   margin-bottom: 36px;
 }
 
@@ -70,26 +72,27 @@ body {
   border-radius: 6px;
   font-size: 14px;
   transition: 0.2s;
+  text-decoration: none;
 }
 
-/* 主按鈕（黑） */
+/* 主按鈕（粉） */
 .primary-btn {
-  background: #1f1f1f;
+  background: #e88ea3;
   color: #fff;
 }
 
 .primary-btn:hover {
-  background: #333;
+  background: #d46c86;
 }
 
 /* 次按鈕 */
 .secondary-btn {
-  border: 1px solid #1f1f1f;
-  color: #1f1f1f;
+  border: 1px solid #e88ea3;
+  color: #e88ea3;
 }
 
 .secondary-btn:hover {
-  background: #1f1f1f;
+  background: #e88ea3;
   color: #fff;
 }
 
@@ -111,34 +114,35 @@ body {
   color: #555;
 }
 
+/* Skills（如果你有加） */
+.skills-list span {
+  display: inline-block;
+  margin: 6px;
+  padding: 6px 12px;
+  background: #fdecef;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
 /* Contact */
 .contact-list p {
   margin: 8px 0;
   color: #444;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-name {
-    font-size: 32px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    display: none;
-  }
+.contact a {
+  color: #e88ea3;
+  text-decoration: none;
 }
-/* 表格外框（讓它像卡片） */
+
+/* 表格外框 */
 .table-wrapper {
   margin-top: 30px;
   overflow-x: auto;
   background: #ffffff;
   border-radius: 12px;
-  border: 1px solid #e5e3df;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1d7de;
+  box-shadow: 0 4px 20px rgba(232, 142, 163, 0.08);
 }
 
 /* 表格本體 */
@@ -150,14 +154,14 @@ body {
 
 /* 表頭 */
 .schedule-table thead {
-  background: #f1efe9;
+  background: #fdecef;
 }
 
 .schedule-table th {
   padding: 14px;
   font-size: 14px;
   font-weight: 500;
-  color: #555;
+  color: #666;
 }
 
 /* 內容 */
@@ -172,12 +176,12 @@ body {
 .schedule-table td:first-child {
   font-weight: 500;
   color: #777;
-  background: #faf9f7;
+  background: #fff3f6;
 }
 
-/* Hover 效果 */
+/* Hover */
 .schedule-table tr:hover {
-  background: #faf8f5;
+  background: #fff8fa;
 }
 
 /* Projects */
@@ -193,15 +197,17 @@ body {
   background: #ffffff;
   padding: 24px;
   border-radius: 12px;
-  border: 1px solid #e5e3df;
+  border: 1px solid #f1d7de;
   text-align: left;
   transition: 0.2s;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Hover（很重要） */
+/* Hover */
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 25px rgba(232, 142, 163, 0.15);
 }
 
 /* 標題 */
@@ -220,58 +226,27 @@ body {
 /* Tag */
 .project-tag {
   font-size: 12px;
-  color: #888;
-  background: #f3f2ef;
+  color: #c0657a;
+  background: #fdecef;
   padding: 4px 10px;
   border-radius: 999px;
 }
 
-/* 手機版 */
+/* Responsive */
 @media (max-width: 768px) {
+  .hero-name {
+    font-size: 32px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* Project Hero */
-.project-hero {
-  padding-top: 120px;
-  text-align: center;
-}
-
-.project-hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.project-subtitle {
-  color: #666;
-  font-size: 16px;
-}
-
-/* Project Content */
-.project-content {
-  padding-top: 40px;
-}
-
-.project-section {
-  margin-bottom: 50px;
-  text-align: left;
-}
-
-.project-section h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.project-section p {
-  color: #555;
-}
-
-.project-section ul {
-  padding-left: 20px;
-}
-
-.project-section li {
-  margin-bottom: 8px;
 }
