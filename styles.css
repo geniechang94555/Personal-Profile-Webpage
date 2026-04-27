@@ -1,3 +1,6 @@
+/* 引入高質感字體 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* Reset */
 * {
   margin: 0;
@@ -5,12 +8,12 @@
   box-sizing: border-box;
 }
 
-/* 全站 */
+/* 全站 (換上新字體與微漸層背景) */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #fff6f8; /* 淡粉背景 */
-  color: #1f1f1f;
-  line-height: 1.6;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fffcfd 0%, #fff6f8 100%);
+  color: #2c2c2c;
+  line-height: 1.7;
 }
 
 /* Navbar */
@@ -21,13 +24,16 @@ body {
   padding: 20px 12%;
   position: fixed;
   width: 100%;
-  background: rgba(255, 246, 248, 0.9);
-  border-bottom: 1px solid #f1d7de;
+  background: rgba(255, 252, 253, 0.85);
+  backdrop-filter: blur(8px); /* 導覽列加上毛玻璃效果，超有質感 */
+  border-bottom: 1px solid rgba(241, 215, 222, 0.5);
+  z-index: 1000;
 }
 
 .nav-logo {
   font-weight: 600;
   font-size: 16px;
+  color: #c0657a;
 }
 
 .nav-links a {
@@ -35,6 +41,11 @@ body {
   font-size: 14px;
   color: #666;
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #c0657a;
 }
 
 /* Hero */
@@ -45,104 +56,95 @@ body {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  background: linear-gradient(180deg, #fff6f8 0%, #ffffff 100%);
 }
 
+/* 名字加上玫瑰金漸層 */
 .hero-name {
-  font-size: 48px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #c0657a, #e88ea3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-tagline {
-  font-size: 18px;
+  font-size: 20px;
   color: #777;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
+  font-weight: 300;
 }
 
 /* Buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .btn {
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: 0.2s;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
-/* 主按鈕（粉） */
+/* 主按鈕（立體粉） */
 .primary-btn {
   background: #e88ea3;
   color: #fff;
+  box-shadow: 0 8px 16px rgba(232, 142, 163, 0.25);
 }
 
 .primary-btn:hover {
   background: #d46c86;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(232, 142, 163, 0.35);
 }
 
 /* 次按鈕 */
 .secondary-btn {
   border: 1px solid #e88ea3;
   color: #e88ea3;
+  background: transparent;
 }
 
 .secondary-btn:hover {
   background: #e88ea3;
   color: #fff;
+  transform: translateY(-2px);
 }
 
 /* Section */
 .section-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 120px 20px;
   text-align: center;
 }
 
 .section-container h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: #c0657a;
 }
 
-/* About */
 .about p {
   color: #555;
+  font-size: 16px;
 }
 
-/* Skills（如果你有加） */
-.skills-list span {
-  display: inline-block;
-  margin: 6px;
-  padding: 6px 12px;
-  background: #fdecef;
-  border-radius: 20px;
-  font-size: 13px;
-}
-
-/* Contact */
-.contact-list p {
-  margin: 8px 0;
-  color: #444;
-}
-
-.contact a {
-  color: #e88ea3;
-  text-decoration: none;
-}
-
-/* 表格外框 */
+/* 表格外框 (拿掉生硬邊框，改用高級空氣陰影) */
 .table-wrapper {
-  margin-top: 30px;
+  margin-top: 40px;
   overflow-x: auto;
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #f1d7de;
-  box-shadow: 0 4px 20px rgba(232, 142, 163, 0.08);
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(232, 142, 163, 0.08);
 }
 
 /* 表格本體 */
@@ -152,34 +154,25 @@ body {
   min-width: 600px;
 }
 
-/* 表頭 */
 .schedule-table thead {
   background: #fdecef;
 }
 
 .schedule-table th {
-  padding: 14px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #666;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #c0657a;
 }
 
-/* 內容 */
 .schedule-table td {
-  padding: 14px;
+  padding: 16px;
   text-align: center;
   font-size: 14px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #fdf2f4;
+  color: #555;
 }
 
-/* Time 欄 */
-.schedule-table td:first-child {
-  font-weight: 500;
-  color: #777;
-  background: #fff3f6;
-}
-
-/* Hover */
 .schedule-table tr:hover {
   background: #fff8fa;
 }
@@ -188,65 +181,117 @@ body {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   margin-top: 40px;
 }
 
-/* 卡片 */
+/* 卡片 (拿掉邊框，加大留白與陰影) */
 .project-card {
   background: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid #f1d7de;
+  padding: 32px 24px;
+  border-radius: 16px;
+  border: none;
   text-align: left;
-  transition: 0.2s;
+  transition: all 0.3s ease;
   text-decoration: none;
   color: inherit;
+  box-shadow: 0 4px 20px rgba(232, 142, 163, 0.05);
+  cursor: pointer;
 }
 
-/* Hover */
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(232, 142, 163, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(232, 142, 163, 0.15);
 }
 
-/* 標題 */
 .project-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #333;
 }
 
-/* 內容 */
 .project-card p {
   font-size: 14px;
   color: #666;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Tag */
 .project-tag {
   font-size: 12px;
   color: #c0657a;
   background: #fdecef;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
+  font-weight: 500;
+}
+
+/* 進場微動畫 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content, .section-container {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Project 子頁面專用 */
+.project-hero {
+  padding-top: 140px;
+  padding-bottom: 40px;
+  background: linear-gradient(180deg, #fffcfd 0%, #ffffff 100%);
+}
+
+.project-hero h1 {
+  font-size: 40px;
+  color: #c0657a;
+  margin-bottom: 16px;
+}
+
+.project-subtitle {
+  font-size: 18px;
+  color: #777;
+}
+
+.project-content {
+  background: #ffffff;
+}
+
+.project-section {
+  text-align: left;
+  margin-bottom: 40px;
+  padding: 40px;
+  background: #fffcfd;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(232, 142, 163, 0.04);
+}
+
+.project-section h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #c0657a;
+}
+
+.project-section ul {
+  padding-left: 24px;
+  color: #555;
+}
+
+.project-section li {
+  margin-bottom: 10px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-name {
-    font-size: 32px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+  .hero-name { font-size: 36px; }
+  .hero-buttons { flex-direction: column; }
+  .nav-links { display: none; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-section { padding: 24px; }
 }
